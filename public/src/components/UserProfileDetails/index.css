@@ -1,0 +1,27 @@
+.profile-container {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+  background-size: cover;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+}
+.profile-image {
+  padding: 0px;
+  height: 35px;
+  width: 35px;
+}
+.username {
+  color: #6366f1;
+  font-family: 'Roboto';
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.short-bio {
+  color: #2c364c;
+  font-family: 'Roboto';
+  font-size: 10px;
+  font-weight: 400;
+}
