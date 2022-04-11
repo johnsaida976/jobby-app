@@ -1,50 +1,49 @@
-import {FaStar} from 'react-icons/fa'
-import {IoLocationSharp} from 'react-icons/io5'
+import {AiFillStar} from 'react-icons/ai'
 import {BsBriefcaseFill} from 'react-icons/bs'
+import {GoLocation} from 'react-icons/go'
 import './index.css'
 
-const SimilarJobsItem = props => {
-  const {similarJobsDetails} = props
+const SimilarJobItem = props => {
+  const {jobDetails} = props
   const {
     companyLogoUrl,
     employmentType,
-    id,
     jobDescription,
     location,
-    rating,
     title,
-  } = similarJobsDetails
+    rating,
+  } = jobDetails
+
   return (
-    <li className="similar-job-card">
-      <div className="title-container">
+    <li className="similar-list-docs">
+      <div className="logo-container">
         <img
           src={companyLogoUrl}
           alt="similar job company logo"
-          className="similar-image"
+          className="company-logo-url"
         />
-        <div className="title-rating-container">
-          <h1 className="similar-name">{title}</h1>
+        <div>
+          <h1 className="company-logo-title">{title}</h1>
           <div className="rating-container">
-            <FaStar className="stars" />
-            <p className="rating">{rating}</p>
+            <AiFillStar className="star-icon" />
+            <p className="count-rating">{rating}</p>
           </div>
         </div>
       </div>
-      <div className="similar-description-container">
-        <h1 className="similar-description">Description</h1>
-        <p className="similar-para">{jobDescription}</p>
-      </div>
-      <div className="similar-location-container">
-        <div className="location-container">
-          <IoLocationSharp className="location-icon" />
-          <p className="similar-location">{location}</p>
+      <h1 className="similar-desc-heading">Description</h1>
+      <p className="similar-desc">{jobDescription}</p>
+      <div className="location-container-flex-justify">
+        <div className="responsive">
+          <GoLocation className="location-logo" />
+          <p className="location-desc">{location}</p>
         </div>
-        <div className="similar-employment-container">
-          <BsBriefcaseFill className="employment-icon" />
-          <p className="similar-employment">{employmentType}</p>
+        <div className="responsive">
+          <BsBriefcaseFill className="location-logo-brief" />
+          <p className="location-desc">{employmentType}</p>
         </div>
       </div>
     </li>
   )
 }
-export default SimilarJobsItem
+
+export default SimilarJobItem

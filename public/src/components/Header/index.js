@@ -1,5 +1,5 @@
-import {Link, withRouter} from 'react-router-dom'
 import Cookies from 'js-cookie'
+import {withRouter, Link} from 'react-router-dom'
 import './index.css'
 
 const Header = props => {
@@ -10,30 +10,31 @@ const Header = props => {
   }
 
   return (
-    <nav className="nav-container">
-      <ul className="nav-items">
-        <Link to="/">
-          <li className="logo-list">
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
-              alt="website logo"
-              className="logo"
-            />
-          </li>
+    <nav className="navbar-container">
+      <div>
+        <Link to="/" className="link-item">
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
+            alt="website logo"
+            className="website-logo"
+          />
         </Link>
-        <div className="nav-content">
-          <Link to="/" className="nav-link">
-            <li className="list-item">Home</li>
-          </Link>
-          <Link to="/jobs" className="nav-link">
-            <li className="list-item">Jobs</li>
-          </Link>
-        </div>
+      </div>
+      <ul className="header-list-items">
+        <Link to="/" className="link-item">
+          <li className="home-heading home">Home</li>
+        </Link>
+        <Link to="/jobs" className="link-item">
+          <li className="jon-heading home">Jobs</li>
+        </Link>
+      </ul>
+      <div>
         <button type="button" className="logout-button" onClick={onClickLogout}>
           Logout
         </button>
-      </ul>
+      </div>
     </nav>
   )
 }
+
 export default withRouter(Header)
