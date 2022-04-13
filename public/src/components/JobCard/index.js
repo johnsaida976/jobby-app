@@ -1,57 +1,52 @@
-import {AiFillStar} from 'react-icons/ai'
 import {Link} from 'react-router-dom'
-import {HiLocationMarker, HiMail} from 'react-icons/hi'
+import {BsStarFill} from 'react-icons/bs'
+import {FaShoppingBag} from 'react-icons/fa'
+import {MdLocationOn} from 'react-icons/md'
 import './index.css'
 
 const JobCard = props => {
-  const {jobDetails} = props
+  const {each} = props
   const {
-    title,
     companyLogoUrl,
-    rating,
     employmentType,
-    location,
-    id,
-    packagePerAnnum,
     jobDescription,
-  } = jobDetails
-
+    location,
+    packagePerAnnum,
+    rating,
+    title,
+    id,
+  } = each
   return (
-    <Link to={`/jobs/${id}`} className="link-item">
-      <li className="job-list-items">
-        <div className="company-container">
-          <div>
-            <img src={companyLogoUrl} alt="company logo" className="logo-url" />
-          </div>
-          <div>
-            <h1 className="company-title">{title}</h1>
-            <div className="star-icon-container">
-              <AiFillStar className="star-icon" />
-              <p className="rating-count">{rating}</p>
+    <Link to={`jobs/${id}`} className="link">
+      <div className="jobCardDiv">
+        <div className="div5">
+          <img src={companyLogoUrl} className="img11" alt="company logo" />
+          <div className="div6">
+            <h1 className="h5">{title}</h1>
+            <div className="div7">
+              <BsStarFill className="sort-by-icon" />
+              <p className="p2">{rating}</p>
             </div>
           </div>
         </div>
-        <div className="location-container-flex-content">
-          <div className="location-desc">
-            <div className="star-icon-container">
-              <HiLocationMarker className="location-icon" />
-              <p className="location-desc description">{location}</p>
+        <div className="div8">
+          <div className="div10">
+            <div className="div9">
+              <MdLocationOn className="sort-by-icon1" />
+              <p>{location}</p>
             </div>
-            <div className="star-icon-container">
-              <HiMail className="location-icon left-icon" />
-              <p className="emp-type description">{employmentType}</p>
+            <div className="div9">
+              <FaShoppingBag className="sort-by-icon1" />
+              <p>{employmentType}</p>
             </div>
           </div>
-          <div className="star-icon-container">
-            <p className="package-desc description">{packagePerAnnum}</p>
-          </div>
+          <p>{packagePerAnnum}</p>
         </div>
-        <hr className="line" />
-        <h1 className="desc-heading">Description</h1>
-        <p className="job-description">{jobDescription}</p>
-      </li>
+        <hr />
+        <h1 className="p3">Description</h1>
+        <p>{jobDescription}</p>
+      </div>
     </Link>
   )
 }
-
 export default JobCard
