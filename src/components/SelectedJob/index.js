@@ -144,7 +144,7 @@ class SelectedJob extends Component {
       <>
         <Header />
         <div>
-          <div className="jobCardDiv1" testid="loader">
+          <div className="jobCardDiv1">
             <div className="div5">
               <img
                 src={companyLogoUrl}
@@ -179,7 +179,7 @@ class SelectedJob extends Component {
             <h1>Skills</h1>
             <ul className="skillSubDiv">
               {skillData.map(each => (
-                <Skill each={each} key={each.id} />
+                <Skill each={each} key={each.name} />
               ))}
             </ul>
             <h1>Life at Company</h1>
